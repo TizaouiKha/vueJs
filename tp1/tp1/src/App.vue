@@ -1,5 +1,8 @@
 <script setup lang="ts">
+  import {ref} from "vue";
+
   const message = "Hello World!";
+  const nom = ref('')
 </script>
 
 <template>
@@ -9,8 +12,11 @@
     documentation
   </p>
 
-  <p>{{message}}</p>
+  <input type="text" v-model="nom" placeholder="Entrez votre nom" />
+
+  <p>{{message + ' ' + nom}}</p>
   <p>{{'2 + 2 = ' + (2 + 2)}}</p>
+
 </template>
 
 <style scoped></style>
