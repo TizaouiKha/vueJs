@@ -1,18 +1,31 @@
-<script setup lang="ts">
-import FormCheckout from './components/FormCheckout.vue';
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div class="container">
-    <FormCheckout />
-  </div>
+  <nav class="navbar">
+    <router-link to="/">Accueil</router-link>
+    <router-link to="/checkout">Commande</router-link>
+    <router-link to="/dashboard">Dashboard</router-link>
+  </nav>
+
+  <router-view />
 </template>
 
-<style scoped>
-.container {
+<style>
+.navbar {
   display: flex;
-  justify-content: center;
-  padding: 40px 20px;
-  font-family: sans-serif;
+  gap: 20px;
+  padding: 14px 24px;
+  background-color: #1a1a2e;
+}
+
+.navbar a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.navbar a.router-link-active {
+  color: white;
+  font-weight: 600;
 }
 </style>
